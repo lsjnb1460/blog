@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="msvalidate.01" content="5A7D95CC1BE56A0DD3D6C03AA725924B" />
-    <title>分类式网站收录</title>
-    <style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>免费网站收录</title>
+        <link rel="icon" href="image/logo.png" type="image/png">
+        <style>
         * {
             margin: 0;
             padding: 0;
@@ -78,26 +78,48 @@
         /* 单个网站卡片 */
         .link-card {
             padding: 15px;
-            background: #f9fafb;
-            border-radius: 8px;
+            background: #ffffff;
+            border-radius: 12px;
             border: 1px solid #e5e7eb;
             transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            overflow: visible;
+            margin-left: 0;
         }
 
         .link-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             border-color: #d1d5db;
+        }
+
+        /* 头像容器 */
+        .avatar-container {
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+            border-radius: 50%;
+            flex-shrink: 0;
         }
 
         /* 网站/仓库头像 */
         .site-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 6px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 10px;
-            border: 1px solid #e5e7eb;
+            border: 2px solid #f3f4f6;
+            margin-left: 0;
+        }
+
+        /* 卡片内容区域 */
+        .card-content {
+            flex: 1;
+            min-width: 0;
         }
 
         /* 网站/仓库名称 */
@@ -105,9 +127,9 @@
             font-size: 16px;
             font-weight: 600;
             color: #1f2937;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             text-decoration: none;
-            display: inline-block;
+            display: block;
         }
 
         .site-name:hover {
@@ -118,9 +140,8 @@
         .site-desc {
             font-size: 13px;
             color: #6b7280;
-            line-height: 1.5;
-            margin-bottom: 8px;
-            min-height: 36px;
+            line-height: 1.4;
+            margin-bottom: 2px;
         }
 
         /* 网站/仓库链接 */
@@ -128,13 +149,20 @@
             font-size: 12px;
             color: #8b5cf6;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
+            display: block;
         }
 
         .site-url:hover {
             text-decoration: underline;
+        }
+
+        /* 箭头图标 */
+        .link-card::after {
+            content: "→";
+            font-size: 14px;
+            color: #9ca3af;
+            margin-left: 10px;
+            flex-shrink: 0;
         }
 
         /* 适配移动端 */
@@ -166,81 +194,112 @@
     <div class="category-container">
         <!-- 第一个分类：技术博客 -->
         <div class="category-box">
-            <h2 class="category-title">技术博客</h2>
+            <h2 class="category-title">博客</h2>
             <div class="category-links">
                 <!-- 网站1 -->
                 <div class="link-card">
-                    <img class="site-avatar" src="https://picsum.photos/200/200?random=1" alt="网站头像">
-                    <a href="#" class="site-name">Echo 个人主页</a>
-                    <p class="site-desc">专注于前端开发与技术分享，记录学习过程中的点点滴滴</p>
-                    <a href="#" class="site-url">🔗 https://echo.example.com</a>
+                    <div class="avatar-container">
+                        <img class="site-avatar" src="https://picsum.photos/200/200?random=1" alt="网站头像">
+                    </div>
+                    <div class="card-content">
+                        <a href="#" class="site-name">1. Echo (主页)</a>
+                        <p class="site-desc">专注于前端开发与技术分享</p>
+                        <a href="#" class="site-url">GitHub 地址: ~/Tomotoes/HomePage</a>
+                    </div>
                 </div>
                 <!-- 网站2 -->
                 <div class="link-card">
-                    <img class="site-avatar" src="https://picsum.photos/200/200?random=2" alt="网站头像">
-                    <a href="#" class="site-name">Solstice23's Blog</a>
-                    <p class="site-desc">Debug the world. 知名博客主题Argon作者的个人博客</p>
-                    <a href="#" class="site-url">🔗 https://solstice23.example.com</a>
+                    <div class="avatar-container">
+                        <img class="site-avatar" src="https://picsum.photos/200/200?random=2" alt="网站头像">
+                    </div>
+                    <div class="card-content">
+                        <a href="#" class="site-name">2. Solstice23's Blog</a>
+                        <p class="site-desc">Debug the world. 知名博客主题作者</p>
+                        <a href="#" class="site-url">GitHub 地址: ~/Solstice23/Blog</a>
+                    </div>
                 </div>
                 <!-- 网站3 -->
                 <div class="link-card">
-                    <img class="site-avatar" src="https://picsum.photos/200/200?random=3" alt="网站头像">
-                    <a href="#" class="site-name">404_502 博客</a>
-                    <p class="site-desc">凡是过去，皆为序章；凡是未来，皆有可期。生活与技术的碎碎念</p>
-                    <a href="#" class="site-url">🔗 https://404502.example.com</a>
+                    <div class="avatar-container">
+                        <img class="site-avatar" src="https://picsum.photos/200/200?random=3" alt="网站头像">
+                    </div>
+                    <div class="card-content">
+                        <a href="#" class="site-name">3. 404_502 博客</a>
+                        <p class="site-desc">生活与技术的碎碎念</p>
+                        <a href="#" class="site-url">GitHub 地址: ~/404502/Blog</a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- 第二个分类：优质开源仓库 -->
         <div class="category-box">
-            <h2 class="category-title">优质开源仓库</h2>
+            <h2 class="category-title">导航</h2>
             <div class="category-links">
                 <!-- 仓库1：Gitter -->
                 <div class="link-card">
-                    <img class="site-avatar" src="https://picsum.photos/200/200?random=4" alt="Gitter仓库头像">
-                    <a href="#" class="site-name">Gitter - GitHub小程序客户端</a>
-                    <p class="site-desc">基于Taro框架开发的微信小程序GitHub客户端，适配GitHub Api v3，集成Towxml解析Markdown</p>
-                    <a href="#" class="site-url">🔗 https://github.com/example/gitter</a>
+                    <div class="avatar-container">
+                        <img class="site-avatar" src="https://picsum.photos/200/200?random=4" alt="Gitter仓库头像">
+                    </div>
+                    <div class="card-content">
+                        <a href="#" class="site-name">1. Gitter - GitHub小程序客户端</a>
+                        <p class="site-desc">基于Taro框架开发的微信小程序GitHub客户端</p>
+                        <a href="#" class="site-url">GitHub 地址: ~/example/gitter</a>
+                    </div>
                 </div>
                 <!-- 仓库2 -->
                 <div class="link-card">
-                    <img class="site-avatar" src="https://picsum.photos/200/200?random=5" alt="仓库头像">
-                    <a href="#" class="site-name">Taro UI 官方仓库</a>
-                    <p class="site-desc">Taro框架配套的多端UI组件库，支持微信小程序、H5、React Native等多端适配</p>
-                    <a href="#" class="site-url">🔗 https://github.com/NervJS/taro-ui</a>
+                    <div class="avatar-container">
+                        <img class="site-avatar" src="https://picsum.photos/200/200?random=5" alt="仓库头像">
+                    </div>
+                    <div class="card-content">
+                        <a href="#" class="site-name">2. Taro UI 官方仓库</a>
+                        <p class="site-desc">Taro框架配套的多端UI组件库</p>
+                        <a href="#" class="site-url">GitHub 地址: ~/NervJS/taro-ui</a>
+                    </div>
                 </div>
                 <!-- 仓库3 -->
                 <div class="link-card">
-                    <img class="site-avatar" src="https://picsum.photos/200/200?random=6" alt="仓库头像">
-                    <a href="#" class="site-name">Towxml Markdown解析库</a>
-                    <p class="site-desc">专为微信小程序开发的Markdown解析库，支持代码高亮、LaTex公式、流程图等特性</p>
-                    <a href="#" class="site-url">🔗 https://github.com/sbfkcel/towxml</a>
+                    <div class="avatar-container">
+                        <img class="site-avatar" src="https://picsum.photos/200/200?random=6" alt="仓库头像">
+                    </div>
+                    <div class="card-content">
+                        <a href="#" class="site-name">3. Towxml Markdown解析库</a>
+                        <p class="site-desc">专为微信小程序开发的Markdown解析库</p>
+                        <a href="#" class="site-url">GitHub 地址: ~/sbfkcel/towxml</a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- 第三个分类：生活美学 -->
         <div class="category-box">
-            <h2 class="category-title">生活美学</h2>
+            <h2 class="category-title">其他</h2>
             <div class="category-links">
                 <!-- 网站1 -->
                 <div class="link-card">
-                    <img class="site-avatar" src="https://picsum.photos/200/200?random=7" alt="网站头像">
-                    <a href="#" class="site-name">AkiDAY</a>
-                    <p class="site-desc">Forever Autumn Planet，分享生活美学与小众兴趣</p>
-                    <a href="#" class="site-url">🔗 https://akiday.example.com</a>
+                    <div class="avatar-container">
+                        <img class="site-avatar" src="https://picsum.photos/200/200?random=7" alt="网站头像">
+                    </div>
+                    <div class="card-content">
+                        <a href="#" class="site-name">1. AkiDAY</a>
+                        <p class="site-desc">Forever Autumn Planet，分享生活美学</p>
+                        <a href="#" class="site-url">GitHub 地址: ~/AkiDAY/Blog</a>
+                    </div>
                 </div>
                 <!-- 网站2 -->
                 <div class="link-card">
-                    <img class="site-avatar" src="https://picsum.photos/200/200?random=8" alt="网站头像">
-                    <a href="#" class="site-name">Aurora's blog</a>
-                    <p class="site-desc">在这一次次日落月升里，再爱一次人间。文艺与治愈的小站</p>
-                    <a href="#" class="site-url">🔗 https://aurora.example.com</a>
+                    <div class="avatar-container">
+                        <img class="site-avatar" src="https://picsum.photos/200/200?random=8" alt="网站头像">
+                    </div>
+                    <div class="card-content">
+                        <a href="#" class="site-name">2. Aurora's blog</a>
+                        <p class="site-desc">文艺与治愈的小站</p>
+                        <a href="#" class="site-url">GitHub 地址: ~/Aurora/Blog</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
 </html>
-
