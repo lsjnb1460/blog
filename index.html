@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>免费网站收录</title>
-        <link rel="icon" href="image/logo.png" type="image/png">
-        <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>免费网站收录</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <!-- 引入本地的pio.css（核心修改点） -->
+    <link href="pio.css" rel="stylesheet" type="text/css"/>
+    <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Microsoft Yahei", "PingFang SC", sans-serif;
+            font-family: "PingFang SC","Microsoft YaHei","Heiti SC","SimHei",sans-serif;
         }
 
         body {
             background-color: #f0f2f5;
             padding: 40px 20px;
+            line-height: 1.6;
+            position: relative;
         }
 
-        /* 页面标题 */
+        /* 新增精美标题样式 - 核心整合部分 */
         .page-title {
             text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            line-height: 1.2;
+        }
+        .banner-subtitle {
+            font-size: 20px;
+            text-align: center;
             margin-bottom: 40px;
-            color: #2d3748;
-            font-size: 28px;
-            font-weight: 600;
-            letter-spacing: 1px;
+            font-weight: 500;
+            -webkit-text-fill-color: transparent;
+            background: linear-gradient(94.75deg,rgb(60,172,247) 0%,rgb(131,101,253) 43.66%, rgb(255,141,112) 64.23%,rgb(247,201,102) 83.76%,rgb(172,143,100) 100%);
+            -webkit-background-clip:text;
+            background-clip:text;
         }
 
         /* 分类容器总布局 */
@@ -46,17 +61,18 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
         }
 
-        /* 分类标题 */
+        /* 优化后的分类标题样式 */
         .category-title {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 600;
-            color: #1f2937;
+            color: #222;
             margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 2px solid #f3f4f6;
             display: flex;
             align-items: center;
             gap: 10px;
+            letter-spacing: 2px;
         }
 
         /* 分类标题图标 */
@@ -122,26 +138,28 @@
             min-width: 0;
         }
 
-        /* 网站/仓库名称 */
+        /* 优化后的网站名称样式 */
         .site-name {
-            font-size: 16px;
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 4px;
+            font-size: 17px;
+            font-weight: 500;
+            color: #222;
+            margin-bottom: 6px;
             text-decoration: none;
             display: block;
+            letter-spacing: 1px;
         }
 
         .site-name:hover {
             color: #6366f1;
         }
 
-        /* 网站/仓库描述 */
+        /* 优化后的网站描述样式 */
         .site-desc {
-            font-size: 13px;
-            color: #6b7280;
-            line-height: 1.4;
+            font-size: 14px;
+            color: #777;
+            line-height: 1.5;
             margin-bottom: 2px;
+            letter-spacing: 0.5px;
         }
 
         /* 箭头图标 */
@@ -153,30 +171,62 @@
             flex-shrink: 0;
         }
 
+        /* 看板娘容器样式 */
+        #live2d-wrapper{
+            position:fixed;
+            right:100px;
+            bottom:60px;
+            z-index:9999;
+            transform:scale(0.6);
+            transform-origin:bottom right;
+            width:300px;
+            height:400px;
+            pointer-events:none; /* 如需互动可删除此行 */
+        }
+        #live2d-wrapper canvas{width:100% !important;height:100% !important;display:block;}
+
         /* 适配移动端 */
         @media (max-width: 768px) {
             .page-title {
-                font-size: 24px;
+                font-size: 28px;
+                letter-spacing: 2px;
+                margin-bottom: 8px;
+            }
+            .banner-subtitle {
+                font-size: 18px;
                 margin-bottom: 30px;
             }
-
             .category-box {
                 padding: 20px;
             }
-
             .category-links {
                 grid-template-columns: 1fr;
             }
-
             .category-title {
-                font-size: 18px;
+                font-size: 20px;
+                letter-spacing: 1.5px;
+            }
+            .site-name {
+                font-size: 16px;
+            }
+            .site-desc {
+                font-size: 13px;
+            }
+            /* 移动端看板娘适配 */
+            #live2d-wrapper{
+                right:10px;
+                bottom:20px;
+                transform:scale(0.45);
+                width:250px;
+                height:350px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 页面标题 -->
+    <!-- 页面标题 - 新增渐变副标题 -->
     <h1 class="page-title">分类式优质网站/仓库收录</h1>
+    <p class="banner-subtitle">精选优质资源 · 助力高效浏览</p>
 
     <!-- 分类容器 -->
     <div class="category-container">
@@ -200,8 +250,7 @@
                         <img class="site-avatar" src="https://q1.qlogo.cn/g?b=qq&nk=8885155&s=640" alt="网站头像">
                     </div>
                     <div class="card-content">
-                        <a href="http://blog.hzyo.cn
-" class="site-name">2. 平凡博客</a>
+                        <a href="http://blog.hzyo.cn" class="site-name">2. 平凡博客</a>
                         <p class="site-desc">平凡博客的日常记录</p>
                     </div>
                 </div>
@@ -282,7 +331,50 @@
             </div>
         </div>
     </div>
-<!-- 樱花特效 -->
-<script src="https://jsd.cdn.zzko.cn/gh/lizina66/api/img/jpuer.js"></script>
+
+    <!-- 看板娘容器 -->
+    <div id="live2d-wrapper"></div>
+
+    <!--春节灯笼开始-->
+    <link href="https://cdn.jsdelivr.net/gh/huangwb8/bloghelper@latest/css/deng.css" rel="stylesheet">
+    <div class="deng-box">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b"><div class="deng-t">春节</div></div>
+            </div>
+            <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+        </div>
+    </div>
+     
+    <div class="deng-box1">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b"><div class="deng-t">快乐</div></div>
+            </div>
+            <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+        </div>
+    </div>
+    <!--春节灯笼结束-->
+
+    <!-- 樱花特效 -->
+    <script src="https://jsd.cdn.zzko.cn/gh/lizina66/api/img/jpuer.js"></script>
+
+    <!-- Load TweenLite -->
+    <script src="https://cdn.jsdelivr.net/npm/greensock@1.20.2/dist/TweenLite.js"></script>
+     
+    <!-- Copyrighted cubism SDK -->
+    <script src="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js"></script>
+    <!-- Load Pixi (dependency for cubism 2/4 integrated loader) -->
+    <script src="https://cdn.jsdelivr.net/npm/pixi.js@5.3.6/dist/pixi.min.js"></script>
+    <!-- Load cubism 4 integrated loader -->
+    <script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display@0.3.1/dist/cubism4.min.js"></script>
+     
+    <!-- 移除远程pio.css引用，改用本地的（已在head中引入） -->
+    <script src="https://cdn.jsdelivr.net/gh/journey-ad/blog-img@76ba2b3/live2d/lib/pio.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/journey-ad/blog-img@76ba2b3/live2d/lib/pio_sdk4.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/journey-ad/blog-img@76ba2b3/live2d/lib/load.js"></script>
+
 </body>
 </html>
