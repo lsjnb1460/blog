@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>免费网站收录</title>
     <link rel="icon" href="image/logo.png" type="image/png">
-    <!-- 引入本地的pio.css（核心修改点） -->
     <link href="pio.css" rel="stylesheet" type="text/css"/>
     <style>
         * {
@@ -20,6 +19,33 @@
             padding: 40px 20px;
             line-height: 1.6;
             position: relative;
+        }
+
+        /* 发布按钮样式 */
+        .publish-button-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .publish-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .publish-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
         }
 
         /* 新增精美标题样式 - 核心整合部分 */
@@ -224,9 +250,14 @@
     </style>
 </head>
 <body>
+    <!-- 发布按钮 -->
+    <div class="publish-button-container">
+        <a href="https://lsjyp.de5.net/" class="publish-button">发布你的网站</a>
+    </div>
+    
     <!-- 页面标题 - 新增渐变副标题 -->
-    <h1 class="page-title">分类式优质网站/仓库收录</h1>
-    <p class="banner-subtitle">精选优质资源 · 助力高效浏览</p>
+    <h1 class="page-title">lieny</h1>
+    <p class="banner-subtitle">分类式优质网站收录，精选优质资源 · 助力高效浏览</p>
 
     <!-- 分类容器 -->
     <div class="category-container">
@@ -262,6 +293,16 @@
                     <div class="card-content">
                         <a href="https://prain.cn/" class="site-name">3. 清雨博客</a>
                         <p class="site-desc">生活与技术的碎碎念</p>
+                    </div>
+                </div>
+  <!-- 网站4 -->
+                <div class="link-card">
+                    <div class="avatar-container">
+                        <img class="site-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=1432777209&spec=640&img_type=jpg" alt="网站头像">
+                    </div>
+                    <div class="card-content">
+                        <a href="https://prain.cn/" class="site-name">3. 小枫_QWQ的Blog</a>
+                        <p class="site-desc">这是一个致力于分享前后端技术的博客。同时也分享一些闲聊碎语</p>
                     </div>
                 </div>
             </div>
