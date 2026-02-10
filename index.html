@@ -19,6 +19,8 @@
             padding: 40px 20px;
             line-height: 1.6;
             position: relative;
+            /* 预留页脚空间 */
+            padding-bottom: 80px;
         }
 
         /* 发布按钮样式 */
@@ -211,6 +213,30 @@
         }
         #live2d-wrapper canvas{width:100% !important;height:100% !important;display:block;}
 
+        /* 页脚样式 - 居中显示备案信息 */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            background-color: #ffffff;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+            z-index: 999;
+        }
+
+        .footer a {
+            color: #6366f1;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
         /* 适配移动端 */
         @media (max-width: 768px) {
             .page-title {
@@ -241,10 +267,17 @@
             /* 移动端看板娘适配 */
             #live2d-wrapper{
                 right:10px;
-                bottom:20px;
+                bottom:80px; /* 避开页脚 */
                 transform:scale(0.45);
                 width:250px;
                 height:350px;
+            }
+            /* 移动端页脚适配 */
+            .footer {
+                padding: 12px 0;
+            }
+            .footer a {
+                font-size: 13px;
             }
         }
     </style>
@@ -295,13 +328,13 @@
                         <p class="site-desc">生活与技术的碎碎念</p>
                     </div>
                 </div>
-  <!-- 网站4 -->
+                <!-- 网站4 -->
                 <div class="link-card">
                     <div class="avatar-container">
                         <img class="site-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=1432777209&spec=640&img_type=jpg" alt="网站头像">
                     </div>
                     <div class="card-content">
-                        <a href="https://prain.cn/" class="site-name">3. 小枫_QWQ的Blog</a>
+                        <a href="https://prain.cn/" class="site-name">4. 小枫_QWQ的Blog</a>
                         <p class="site-desc">这是一个致力于分享前后端技术的博客。同时也分享一些闲聊碎语</p>
                     </div>
                 </div>
@@ -416,6 +449,11 @@
     <script src="https://cdn.jsdelivr.net/gh/journey-ad/blog-img@76ba2b3/live2d/lib/pio.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/journey-ad/blog-img@76ba2b3/live2d/lib/pio_sdk4.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/journey-ad/blog-img@76ba2b3/live2d/lib/load.js"></script>
+
+    <!-- 页脚 - 居中显示备案信息 -->
+    <div class="footer">
+        <a href="https://icp.gov.moe/?keyword=20260218" target="_blank">萌ICP备20260218号</a>
+    </div>
 
 </body>
 </html>
